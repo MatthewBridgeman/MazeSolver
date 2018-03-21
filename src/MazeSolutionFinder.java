@@ -10,9 +10,14 @@ import java.util.concurrent.TimeUnit;
 
 public class MazeSolutionFinder {
 
+	/* 
+	 * I decided to go with a fairly simple solution where the program would try to go N, E, S then W, and continue doing this until it reaches a dead end.
+	 * Once it reaches a dead end, it will back track and mark the location it just came from, and then attempt to go N, E, S or W again.
+	 * The program will keep doing this until it either reaches the end location or it finds it's way back at the starting location with no possible way to go.
+	 * It usually solves the mazes in under a second, and it is a pretty simple way of solving a maze.
+	 */ 	
+	
 	public static void main(String[] args) {
-		
-		
 		File file = GetFile(); // Gets the file input from the user
 		long startTime = System.nanoTime(); // Grab the time we started to solve the maze
 		Maze maze = LoadMazeData(file); // Loads the maze data
